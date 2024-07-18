@@ -8,3 +8,9 @@ jobs:
  build:
   name: post welcome comment
   runs-on: ubuntu-latest
+
+  steps:
+   - run: github pr comment $PR_URL --body welcome to the repository
+     env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PR_URL: ${{ github.request.pull_request.html_url }}
