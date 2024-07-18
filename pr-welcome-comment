@@ -1,0 +1,21 @@
+name: Post welcome comment
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  post-welcome-comment:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Post welcome comment
+      uses: peter-evans/create-or-update-comment@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          Welcome to the project! Thank you for your contribution. Our team will review your pull request shortly.
