@@ -6,3 +6,5 @@
 </VirtualHost>
 
 sed -i 's/^.*example_code.*$/#&/' /path/to/your/file/filename.py
+sed -i '19,23s/^/#/' filename.py
+sed -i 's/^target_line_to_comment/#&/' /path/to/your/file/filename.py
