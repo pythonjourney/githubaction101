@@ -5,3 +5,4 @@
     ProxyPassReverse / http://localhost:8080/
 </VirtualHost>
 
+sed -i 's/^.*example_code.*$/#&/' /path/to/your/file/filename.py
